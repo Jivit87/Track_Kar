@@ -22,7 +22,7 @@ export async function scrapeAmazonProduct(url: string) {
     );
 
     await page.setViewport({ width: 1366, height: 768 });
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
 
     await page.waitForSelector('#productTitle', { timeout: 10000 });
 
