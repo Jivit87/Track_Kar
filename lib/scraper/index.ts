@@ -1,4 +1,4 @@
-import chromium from 'chrome-aws-lambda';
+import chromium from '@sparticuz/chromium';
 import puppeteer from 'puppeteer-core';
 import { extractCurrency, extractPrice } from '../utils';
 
@@ -10,11 +10,10 @@ export async function scrapeAmazonProduct(url: string) {
 
   try {
     browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath || '/usr/bin/google-chrome',
-      headless: chromium.headless,
-    });
+        args: chromium.args,
+        executablePath: await chromium.executablePath(),
+        headless: true,
+      });
 
     page = await browser.newPage();
 
