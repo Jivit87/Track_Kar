@@ -12,7 +12,7 @@ const Home = async () => {
   return (
     <>
       <section className="px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-20 bg-[#FFDCDC]/70">
-        <div className="flex justify-between max-xl:flex-col gap-8 sm:gap-12 md:gap-16 ml-6">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 sm:gap-12 md:gap-16 ml-6">
           <div className="flex flex-col justify-center">
             <div className="px-4 sm:px-6 py-2 w-fit rounded-[50px] backdrop-blur-md bg-blue-200/10 border border-blue-700/30 text-xs sm:text-sm flex items-center gap-2 shadow-inner glassy-tube">
               <span>Smart Shopping Starts Here</span>
