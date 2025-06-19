@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Puzzle } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -18,7 +19,12 @@ const Navbar = () => {
           </p>
         </Link>
 
-        
+        <a href="#how">
+          <button className="flex items-center gap-2 bg-red-400/30 px-5 py-3 font-semibold rounded-[5px] cursor-pointer transition-all ease-out hover:scale-105">
+            <Puzzle className="w-5 h-5 text-black" />
+            How It Works
+          </button>
+        </a>
       </nav>
     </header>
   );
