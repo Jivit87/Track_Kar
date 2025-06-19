@@ -39,7 +39,7 @@ const Searchbar = () => {
       setIsLoading(true);
 
       toast.success('Scraping the product from Amazon may take longer time than usual.', {
-        duration: 10000, // 8 seconds
+        duration: 7000, // 8 seconds
       });
 
       const res = await fetch("/api/scrape", {
