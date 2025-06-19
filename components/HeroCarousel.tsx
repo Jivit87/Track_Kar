@@ -6,16 +6,16 @@ const heroImages = [
   {
     imgUrl: "/assets/images/hero-4.png",
     alt: "book",
-    bgColor: "bg-sky-100",
-    accentColor: "bg-sky-200",
-    shadowColor: "shadow-sky-300/40",
+    bgColor: "bg-rose-100",
+    accentColor: "bg-rose-200",
+    shadowColor: "shadow-rose-300/40",
   },
   {
     imgUrl: "/assets/images/hero-2.png",
     alt: "shoes",
-    bgColor: "bg-emerald-100",
-    accentColor: "bg-emerald-200",
-    shadowColor: "shadow-emerald-300/40",
+    bgColor: "bg-rose-100",
+    accentColor: "bg-rose-200",
+    shadowColor: "shadow-rose-300/40",
   },
   {
     imgUrl: "/assets/images/hero-1.png",
@@ -27,16 +27,16 @@ const heroImages = [
   {
     imgUrl: "/assets/images/hero-3.png",
     alt: "book",
-    bgColor: "bg-indigo-100",
-    accentColor: "bg-indigo-200",
-    shadowColor: "shadow-indigo-300/40",
+    bgColor: "bg-rose-100",
+    accentColor: "bg-rose-200",
+    shadowColor: "shadow-rose-300/40",
   },
   {
     imgUrl: "/assets/images/hero-5.png",
     alt: "toy",
-    bgColor: "bg-amber-100",
-    accentColor: "bg-amber-200",
-    shadowColor: "shadow-amber-300/40",
+    bgColor: "bg-rose-100",
+    accentColor: "bg-rose-200",
+    shadowColor: "shadow-rose-300/40",
   },
 ];
 
@@ -102,7 +102,7 @@ const HeroCarousel = () => {
              ${image.accentColor} opacity-40`}
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-white/10 rounded-3xl" />
+                  <div className="absolute inset-0 bg-gradient-to-t 5 rounded-3xl" />
                 </div>
 
                 <div className="relative z-10 flex items-center justify-center">
@@ -134,16 +134,16 @@ const HeroCarousel = () => {
               onClick={() => goToSlide(index)}
               className={`transition-all duration-300 rounded-full
                 ${index === currentIndex
-                  ? "w-8 h-3 bg-gray-800"
-                  : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
+                  ? "w-8 h-3"
+                  : "w-3 h-3"
                 }`}
             />
           ))}
         </div>
 
-        <div className="mt-4 w-full bg-gray-200 rounded-full h-1 overflow-hidden">
+        <div className="mt-4 w-full rounded-full h-1 overflow-hidden">
           <div
-            className="h-full bg-gray-800 transition-all duration-300 ease-out"
+            className="h-full  transition-all duration-300 ease-out"
             style={{
               width: `${((currentIndex + 1) / heroImages.length) * 100}%`,
             }}
