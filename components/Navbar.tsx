@@ -25,15 +25,14 @@ const shouldHideButton =
           </p>
         </a>
 
-        {/* Conditionally render the button */}
         {!shouldHideButton && (
-          <a href="#how">
-            <button className="flex items-center gap-2 bg-red-400/30 px-5 py-3 font-semibold rounded-[5px] cursor-pointer transition-all ease-out hover:scale-105">
-              <Puzzle className="w-5 h-5 text-black" />
-              How It Works
-            </button>
-          </a>
-        )}
+  <a href="#how">
+    <button className="flex items-center gap-2 bg-red-400/30 px-4 py-2 md:px-5 md:py-3 text-sm md:text-base font-semibold rounded-[5px] cursor-pointer transition-all ease-out hover:scale-105">
+      <Puzzle className="w-4 h-4 md:w-5 md:h-5 text-black" />
+      How It Works
+    </button>
+  </a>
+)}
       </nav>
     </header>
   );

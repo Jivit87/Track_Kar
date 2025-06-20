@@ -88,7 +88,6 @@ const HowItWorks = ({ count = 15000 }) => {
 
   return (
     <div id="how" className="min-h-screen bg-[#FFDCDC]/70 relative">
-      {/* Wavy Top Border */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg
           className="relative block w-full h-16 sm:h-20 lg:h-24"
@@ -106,7 +105,6 @@ const HowItWorks = ({ count = 15000 }) => {
 
       <div className="relative pt-20 sm:pt-24 lg:pt-32 py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header Section */}
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-black rounded-full mb-4 sm:mb-6">
               <div className="w-2 h-2 bg-[#FFDCDC] rounded-full animate-pulse"></div>
@@ -125,17 +123,14 @@ const HowItWorks = ({ count = 15000 }) => {
             </p>
           </div>
 
-          {/* Steps Section - Desktop */}
           <div className="hidden lg:block mb-16 lg:mb-20">
             <div className="relative">
-              {/* Connection Line */}
               <div className="absolute top-16 left-0 right-0 h-1 bg-gray-300 rounded-full"></div>
               <div className="absolute top-16 left-0 h-1 bg-black rounded-full w-full transition-all duration-2000 ease-out"></div>
 
               <div className="grid grid-cols-5 gap-4 xl:gap-8">
                 {steps.map((step, index) => (
                   <div key={step.id} className="relative">
-                    {/* Step Circle */}
                     <div className="relative z-10 mx-auto mb-6 lg:mb-8">
                       <div className="w-24 h-24 xl:w-32 xl:h-32 bg-white rounded-full shadow-lg border-4 border-gray-200 flex flex-col items-center justify-center relative hover:scale-105 transition-transform duration-300">
                         <div className="absolute -top-2 -right-2 w-8 h-8 xl:w-12 xl:h-12 bg-black rounded-full flex items-center justify-center">
@@ -147,7 +142,6 @@ const HowItWorks = ({ count = 15000 }) => {
                       </div>
                     </div>
 
-                    {/* Step Content */}
                     <div className="text-center">
                       <h3 className="text-lg xl:text-xl font-bold text-black mb-3 lg:mb-4">
                         {step.title}
@@ -162,12 +156,10 @@ const HowItWorks = ({ count = 15000 }) => {
             </div>
           </div>
 
-          {/* Steps Section - Mobile & Tablet */}
           <div className="lg:hidden space-y-8 sm:space-y-12 mb-12 sm:mb-16">
             {steps.map((step, index) => (
               <div key={step.id} className="relative">
                 <div className="flex items-start gap-4 sm:gap-6">
-                  {/* Step Circle */}
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full shadow-lg border-4 border-gray-200 flex items-center justify-center relative">
                       <div className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-black rounded-full flex items-center justify-center">
@@ -179,7 +171,6 @@ const HowItWorks = ({ count = 15000 }) => {
                     </div>
                   </div>
 
-                  {/* Step Content */}
                   <div className="flex-1 pt-1 sm:pt-2">
                     <h3 className="text-lg sm:text-xl font-bold text-black mb-2 sm:mb-3">
                       {step.title}
@@ -190,7 +181,6 @@ const HowItWorks = ({ count = 15000 }) => {
                   </div>
                 </div>
 
-                {/* Connecting Line */}
                 {index < steps.length - 1 && (
                   <div className="ml-8 sm:ml-10 mt-4 sm:mt-6 w-0.5 h-8 sm:h-12 bg-gray-300"></div>
                 )}
