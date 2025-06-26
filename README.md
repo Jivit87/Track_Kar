@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TrackAI
+
+TrackAI is a Next.js web application that allows users to scrape Amazon product data, view live price history, and receive deal alerts. It provides a modern UI for searching, tracking, and analyzing products, leveraging server-side scraping and a MongoDB backend.
+
+## Features
+
+- **Amazon Product Scraping:** Get live product data, including price, images, and availability.
+- **Price History Tracking:** Visualize historical price changes for each product.
+- **Deal Alerts:** Users can subscribe to products and receive email notifications for price drops or deals.
+- **Trending Products:** Discover popular and trending products among users.
+- **Modern UI:** Responsive, animated interface with carousels, modals, and interactive cards.
+
+## Tech Stack
+
+- **Frontend:** Next.js (App Router), React, Tailwind CSS, Framer Motion, GSAP
+- **Backend:** Node.js, Next.js API routes, Mongoose (MongoDB)
+- **Scraping:** Puppeteer, Cheerio, ScraperAPI
+- **Email:** Nodemailer
+- **Other:** Axios, Headless UI, Lucide React, React Hot Toast
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18.x
+- MongoDB instance (local or cloud)
+- ScraperAPI key (for Amazon scraping)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repo-url>
+   cd trackai
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set up environment variables:**
+   - Create a `.env.local` file with your MongoDB URI and ScraperAPI key:
+     ```
+     MONGODB_URI=your_mongodb_uri
+     SCRAPER_API_KEY=your_scraperapi_key
+     ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Open [http://localhost:3000](http://localhost:3000) in your browser.**
+
+## Project Structure
+
+```
+app/
+  page.jsx                # Landing page with search and trending products
+  products/[id]/page.tsx  # Dynamic product details page
+  api/                    # API routes for scraping and cron jobs
+
+components/
+  HeroCarousel.tsx        # Animated hero section
+  ProductCard.tsx         # Product display card
+  Modal.tsx               # Email subscription modal
+  ...                     # Other UI components
+
+lib/
+  scraper/                # Amazon scraping logic
+  actions/                # Backend actions (CRUD, email, etc.)
+  models/                 # Mongoose models
+  nodemailer/             # Email utilities
+  utils.ts                # Utility functions
+
+public/assets/            # Icons and images
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Files & Directories
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **`lib/scraper/index.ts`**: Scrapes Amazon product data using Cheerio and ScraperAPI.
+- **`lib/models/product.model.ts`**: Mongoose schema for storing product info and price history.
+- **`lib/actions/index.ts`**: Server actions for scraping, storing, and retrieving products, and handling user subscriptions.
+- **`app/products/[id]/page.tsx`**: Product details page with price history, stats, and similar products.
+- **`components/`**: Modular, reusable UI components.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## API Endpoints
 
-## Learn More
+- **`/api/scrape`**: Triggers product scraping.
+- **`/api/cron`**: (For scheduled tasks, e.g., updating prices.)
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Styling:** Tailwind CSS is used for rapid UI development.
+- **Animation:** Framer Motion and GSAP for smooth transitions and effects.
+- **Email:** Configure `lib/nodemailer` for custom email templates and providers.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE)
